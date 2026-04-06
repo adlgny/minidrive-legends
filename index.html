@@ -6,78 +6,146 @@
 <title>MiniDrive Legends</title>
 
 <style>
-body {
+* {
     margin: 0;
-    font-family: Arial;
-    background: #0d0d0d;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #0a0a0a;
     color: white;
 }
 
+/* HEADER */
 header {
-    background: #e63946;
-    padding: 15px;
     text-align: center;
-    font-size: 22px;
-}
-
-section {
     padding: 20px;
 }
 
+header img {
+    width: 140px;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hero h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    opacity: 0.7;
+}
+
+/* GALLERY SLIDER */
 .gallery {
     display: flex;
     overflow-x: auto;
+    gap: 15px;
+    padding: 20px;
 }
 
 .gallery img {
-    width: 150px;
-    margin-right: 10px;
-    border-radius: 10px;
+    width: 180px;
+    border-radius: 12px;
+    transition: 0.3s;
 }
 
-video {
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* VIDEO */
+.video {
+    padding: 20px;
+}
+
+.video video {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 12px;
 }
 
+/* CATALOG */
 .catalog {
-    background: #1a1a1a;
-    padding: 15px;
-    border-radius: 10px;
+    background: #141414;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.catalog h2 {
+    margin-bottom: 10px;
 }
 
 select, button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin-top: 10px;
+    border-radius: 10px;
+    border: none;
+    font-size: 15px;
 }
 
 button {
-    background: #e63946;
+    background: linear-gradient(90deg, #e63946, #ff4d5a);
     color: white;
-    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    padding: 12px 15px;
+    border-radius: 50px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    opacity: 0.5;
+    font-size: 14px;
 }
 </style>
 </head>
 
 <body>
 
-<header style="text-align:center;">
-    <img src="MiniDrive Legends logosu.png" style="width:120px;"><br>
-    MiniDrive Legends
+<header>
+<img src="logo.png">
 </header>
 
+<section class="hero">
+<h1>MiniDrive Legends</h1>
+<p>Gerçek araçların 1/64 ve Lego minyatür koleksiyonu</p>
+</section>
+
 <section>
-<h2>Koleksiyon</h2>
 <div class="gallery">
 <img src="car1.jpg">
 <img src="car2.jpg">
 <img src="car3.jpg">
+<img src="car4.jpg">
 </div>
 </section>
 
-<section>
-<h2>Video</h2>
+<section class="video">
 <video controls>
 <source src="video.mp4" type="video/mp4">
 </video>
@@ -97,13 +165,20 @@ button {
 <button onclick="sendWhatsApp()">Fiyat Sor</button>
 </section>
 
+<div class="whatsapp" onclick="sendWhatsApp()">
+💬 WhatsApp
+</div>
+
+<footer>
+© 2026 MiniDrive Legends
+</footer>
+
 <script>
 function sendWhatsApp() {
     let model = document.getElementById("carModel").value;
 
     let part1 = "90543";
     let part2 = "6060906";
-
     let phone = part1 + part2;
 
     let message = "Merhaba, " + model + " modeli için fiyat almak istiyorum.";
@@ -114,4 +189,3 @@ function sendWhatsApp() {
 </script>
 
 </body>
-</html>
