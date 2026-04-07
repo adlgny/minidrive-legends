@@ -3,75 +3,103 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MiniDrive Legends</title>
+
+<title>Model Garage</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    background: #000;
+    font-family: 'Inter', sans-serif;
+    background: #0b0b0b;
     color: white;
 }
 
 /* HERO */
 .hero {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, #000, #111);
     text-align: center;
-    padding: 80px 20px;
 }
 
 .hero h1 {
-    font-size: 40px;
-    font-weight: 600;
+    font-size: 42px;
+}
+
+.hero span {
+    color: #e63946;
 }
 
 .hero p {
-    opacity: 0.6;
-    margin-top: 10px;
+    opacity: 0.7;
 }
 
-/* GLASS CARD */
+/* SECTION */
 .section {
-    margin: 20px;
-    padding: 20px;
-    border-radius: 20px;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(20px);
+    padding: 40px 20px;
 }
 
-/* GALLERY */
-.gallery {
-    display: flex;
-    overflow-x: auto;
-    gap: 15px;
+/* TITLE */
+.section h2 {
+    margin-bottom: 20px;
 }
 
-.gallery img {
-    width: 200px;
-    border-radius: 15px;
-}
-
-/* PRODUCT CARDS */
+/* PRODUCTS */
 .products {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
 }
 
 .card {
-    padding: 15px;
+    background: #141414;
     border-radius: 15px;
-    background: rgba(255,255,255,0.05);
+    overflow: hidden;
+    transition: 0.3s;
 }
 
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-content h3 {
+    margin: 5px 0;
+}
+
+.info {
+    font-size: 13px;
+    opacity: 0.6;
+}
+
+/* BUTTON */
 button {
     width: 100%;
     padding: 12px;
     margin-top: 10px;
-    border-radius: 12px;
+    border-radius: 10px;
     border: none;
-    background: white;
-    color: black;
-    font-weight: bold;
+    background: #e63946;
+    color: white;
+}
+
+/* STORY */
+.story {
+    background: #111;
+    border-radius: 15px;
+    padding: 20px;
 }
 
 /* WHATSAPP */
@@ -79,58 +107,81 @@ button {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: white;
-    color: black;
-    padding: 10px 15px;
+    background: #e63946;
+    padding: 12px 16px;
     border-radius: 30px;
+    cursor: pointer;
+}
+
+/* DESKTOP */
+@media(min-width:768px){
+.products {
+    grid-template-columns: repeat(3, 1fr);
+}
 }
 </style>
 </head>
 
 <body>
 
+<!-- HERO -->
 <section class="hero">
-<h1>MiniDrive Legends</h1>
-<p>Gerçek araçların minyatür koleksiyonu</p>
+<h1>Model <span>Garage</span></h1>
+<p>Premium Diecast & Lego Koleksiyonu</p>
 </section>
 
+<!-- SHOWROOM -->
 <section class="section">
-<h2>Koleksiyon</h2>
-
-<div class="gallery">
-<img src="https://picsum.photos/300/200?random=1">
-<img src="https://picsum.photos/300/200?random=2">
-<img src="https://picsum.photos/300/200?random=3">
-<img src="https://picsum.photos/300/200?random=4">
-</div>
-</section>
-
-<section class="section">
-<h2>Modeller</h2>
+<h2>🚗 Showroom</h2>
 
 <div class="products">
 
 <div class="card">
-Ford Mustang - Hot Wheels
+<img src="mustang.jpg">
+<div class="card-content">
+<h3>Ford Mustang</h3>
+<p class="info">Hot Wheels • 1/64 • 2023</p>
 <button onclick="ask('Ford Mustang')">Fiyat Sor</button>
 </div>
-
-<div class="card">
-Porsche 911 - Matchbox
-<button onclick="ask('Porsche 911')">Fiyat Sor</button>
 </div>
 
 <div class="card">
-Ferrari F1 - Lego
+<img src="ferrari.jpg">
+<div class="card-content">
+<h3>Ferrari F1</h3>
+<p class="info">Lego • Speed Champions</p>
 <button onclick="ask('Ferrari F1')">Fiyat Sor</button>
 </div>
+</div>
 
+<div class="card">
+<img src="porsche.jpg">
+<div class="card-content">
+<h3>Porsche 911</h3>
+<p class="info">Matchbox • 1/64</p>
+<button onclick="ask('Porsche 911')">Fiyat Sor</button>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- STORY -->
+<section class="section">
+<h2>📖 The Story</h2>
+
+<div class="story">
+<p>
+Model Garage, gerçek otomobillere olan tutkuyu minyatür dünyaya taşıyan özel bir koleksiyondur. 
+Her model; detay, kalite ve estetik açısından özenle seçilmiş, koleksiyon değeri yüksek parçalardan oluşur.
+</p>
 </div>
 
 </section>
 
+<!-- WHATSAPP -->
 <div class="whatsapp" onclick="ask('Merhaba')">
-WhatsApp
+Danışmanlık Al
 </div>
 
 <script>
@@ -140,12 +191,15 @@ let part1 = "90543";
 let part2 = "6060906";
 let phone = part1 + part2;
 
-let message = model + " modeli için fiyat almak istiyorum.";
+let message = model + " modeli için bilgi almak istiyorum.";
 let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
 
 window.open(url, "_blank");
 }
 </script>
+
+</body>
+</html>
 
 </body>
 </html>
