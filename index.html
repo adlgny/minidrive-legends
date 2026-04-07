@@ -23,7 +23,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(180deg, #000, #111);
     text-align: center;
 }
 
@@ -37,16 +36,12 @@ body {
 
 .hero p {
     opacity: 0.7;
+    margin-top: 10px;
 }
 
 /* SECTION */
 .section {
     padding: 40px 20px;
-}
-
-/* TITLE */
-.section h2 {
-    margin-bottom: 20px;
 }
 
 /* PRODUCTS */
@@ -56,6 +51,7 @@ body {
     gap: 20px;
 }
 
+/* CARD */
 .card {
     background: #141414;
     border-radius: 15px;
@@ -75,13 +71,9 @@ body {
     padding: 15px;
 }
 
-.card-content h3 {
-    margin: 5px 0;
-}
-
-.info {
-    font-size: 13px;
-    opacity: 0.6;
+.category {
+    font-size: 14px;
+    opacity: 0.7;
 }
 
 /* BUTTON */
@@ -127,7 +119,7 @@ button {
 <!-- HERO -->
 <section class="hero">
 <h1>Model <span>Garage</span></h1>
-<p>Premium Diecast & Lego Koleksiyonu</p>
+<p>Her modelin bir hikayesi vardır.</p>
 </section>
 
 <!-- SHOWROOM -->
@@ -139,27 +131,24 @@ button {
 <div class="card">
 <img src="mustang.jpg">
 <div class="card-content">
-<h3>Ford Mustang</h3>
-<p class="info">Hot Wheels • 1/64 • 2023</p>
-<button onclick="ask('Ford Mustang')">Fiyat Sor</button>
+<p class="category">Die-Cast Cars</p>
+<button onclick="ask('Die-Cast Cars')">Ayrıntılı Bilgi Al</button>
 </div>
 </div>
 
 <div class="card">
 <img src="ferrari.jpg">
 <div class="card-content">
-<h3>Ferrari F1</h3>
-<p class="info">Lego • Speed Champions</p>
-<button onclick="ask('Ferrari F1')">Fiyat Sor</button>
+<p class="category">Lego</p>
+<button onclick="ask('Lego')">Ayrıntılı Bilgi Al</button>
 </div>
 </div>
 
 <div class="card">
 <img src="porsche.jpg">
 <div class="card-content">
-<h3>Porsche 911</h3>
-<p class="info">Matchbox • 1/64</p>
-<button onclick="ask('Porsche 911')">Fiyat Sor</button>
+<p class="category">RC Cars</p>
+<button onclick="ask('RC Cars')">Ayrıntılı Bilgi Al</button>
 </div>
 </div>
 
@@ -180,7 +169,7 @@ Her model; detay, kalite ve estetik açısından özenle seçilmiş, koleksiyon 
 </section>
 
 <!-- WHATSAPP -->
-<div class="whatsapp" onclick="ask('Merhaba')">
+<div class="whatsapp" onclick="ask('Genel bilgi')">
 Danışmanlık Al
 </div>
 
@@ -191,15 +180,12 @@ let part1 = "90543";
 let part2 = "6060906";
 let phone = part1 + part2;
 
-let message = model + " modeli için bilgi almak istiyorum.";
+let message = model + " kategorisi hakkında ayrıntılı bilgi almak istiyorum.";
 let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
 
 window.open(url, "_blank");
 }
 </script>
-
-</body>
-</html>
 
 </body>
 </html>
